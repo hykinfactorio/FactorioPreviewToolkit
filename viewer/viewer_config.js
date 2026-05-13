@@ -6,5 +6,5 @@ const viewerConfig = {
     fulgora: "https://drive.usercontent.google.com/download?id=1D_ofEHza2cIn6RJjU-fLi3UJ3cAkURvm",
     aquilo: "https://drive.usercontent.google.com/download?id=1_qV6Pe2znQReopC0Wq1awDEXVUreEZiT",
   },
-  planetNamesSource: "https://drive.usercontent.google.com/download?id=1S9OjtYe8icc8PK-iNGAigXhPJAW-x-Oq"
+  planetNamesSource: "../preview/local_planet_names.js"
 };
