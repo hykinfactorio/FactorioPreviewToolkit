@@ -39,6 +39,25 @@ function initKeyboardControls(mapImage, mapContainer, zoomDisplay) {
     updateTransform(mapImage);
   });
 
+  window.addEventListener("touchdown", e => {
+    isDragging = true;
+    startX = e.clientX - offsetX;
+    startY = e.clientY - offsetY;
+    mapContainer.style.curser = "grabbing";
+  });
+
+  window.addEventListener("touchmove", e => {
+    if (!isDragging) return;
+    offsetX = e.clientX - startX;
+    offsetY = e.clientY - startY;
+    updateTransform(mapImage);
+  });
+
+  window.addEventListener("touchend", e => {
+    isDragging = false;
+    mapContainer.style.curser = "grab";
+  });
+  
   window.addEventListener("keydown", e => {
     const valid = ["w", "a", "s", "d", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"];
     if (valid.includes(e.key)) {
