@@ -41,15 +41,15 @@ function initKeyboardControls(mapImage, mapContainer, zoomDisplay) {
 
   mapContainer.addEventListener("touchstart", e => {
     isDragging = true;
-    startX = e.clientX - offsetX;
-    startY = e.clientY - offsetY;
+    startX = e.touches[0].clientX - offsetX;
+    startY = e.touches[0].clientY - offsetY;
     mapContainer.style.curser = "grabbing";
   });
 
   window.addEventListener("touchmove", e => {
     if (!isDragging) return;
-    offsetX = e.clientX - startX;
-    offsetY = e.clientY - startY;
+    offsetX = e.touches[0].clientX - startX;
+    offsetY = e.touches[0].clientY - startY;
     updateTransform(mapImage);
   });
 
