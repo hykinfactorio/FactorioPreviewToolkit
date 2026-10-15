@@ -39,7 +39,7 @@ function initKeyboardControls(mapImage, mapContainer, zoomDisplay) {
     updateTransform(mapImage);
   });
 
-  window.addEventListener("touchdown", e => {
+  mapContainer.addEventListener("touchstart", e => {
     isDragging = true;
     startX = e.clientX - offsetX;
     startY = e.clientY - offsetY;
